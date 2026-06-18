@@ -375,10 +375,10 @@
 
     <!-- SEÇÃO SOBRE O ESCRITÓRIO -->
     <section id="sobre" class="relative py-24 overflow-hidden animate-on-scroll">
-        <!-- Background com scroll lateral (imagem palmas.jpg) - MAIS CLARO E VISÍVEL -->
-        <div class="absolute inset-0 z-0 pointer-events-none opacity-[0.25] bg-cover bg-center mix-blend-lighten" style="background-image: url('imagem palmas.jpg'); width: 130%; animation: panBackground 45s linear infinite alternate;"></div>
-        <!-- Overlay ajustado: escuro no topo e na base (para transição), mais suave no centro -->
-        <div class="absolute inset-0 z-0 bg-gradient-to-b from-bgMain via-bgMain/40 to-bgMain pointer-events-none"></div>
+        <!-- Background com parallax dinâmico lateral (imagem palmas.jpg) - AINDA MAIS CLARO -->
+        <div id="parallax-bg" class="absolute inset-y-0 left-0 z-0 pointer-events-none opacity-[0.45] bg-cover bg-center mix-blend-lighten" style="background-image: url('imagem palmas.jpg'); width: 150%; will-change: transform;"></div>
+        <!-- Overlay ajustado: gradiente espalhado garantindo topo e base 100% integrados na cor de fundo (#080808) para não ter quebra -->
+        <div class="absolute inset-0 z-0 pointer-events-none" style="background: linear-gradient(to bottom, #080808 0%, rgba(8,8,8,0.1) 25%, rgba(8,8,8,0.1) 75%, #080808 100%);"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -463,6 +463,20 @@
             });
         })();
         
+    
+        // Lógica de Parallax Lateral Dinâmico para a Seção Sobre
+        window.addEventListener('scroll', () => {
+            const bg = document.getElementById('parallax-bg');
+            if (bg) {
+                const rect = bg.parentElement.getBoundingClientRect();
+                // Verifica se a seção está visível na tela
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const scrollAmount = window.innerHeight - rect.top;
+                    // Move o fundo suavemente para a esquerda de acordo com o scroll
+                    bg.style.transform = `translateX(-${scrollAmount * 0.15}px)`;
+                }
+            }
+        });
     </script>
 </body>
 </html>
