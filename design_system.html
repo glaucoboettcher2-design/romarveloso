@@ -39,8 +39,18 @@
             100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
         }
 
-        .animate-on-scroll { animation-play-state: paused !important; }
-        .animate-on-scroll.animate { animation-play-state: running !important; }
+        .animate-on-scroll { 
+            opacity: 0;
+            filter: blur(12px);
+            transform: translate(-30px, 30px);
+            transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity, filter;
+        }
+        .animate-on-scroll.animate { 
+            opacity: 1;
+            filter: blur(0px);
+            transform: translate(0, 0);
+        }
 
         .border-gradient {
             position: relative;

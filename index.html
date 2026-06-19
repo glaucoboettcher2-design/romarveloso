@@ -43,20 +43,28 @@
             display: inline-block;
             opacity: 0;
             filter: blur(12px);
-            transform: translate(-20px, 20px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-            will-change: transform, opacity, filter;
+            transition: opacity 0.8s ease-out, filter 0.8s ease-out;
+            will-change: opacity, filter;
         }
         .staggered-title.animate span,
         .animate-on-scroll.animate .staggered-title span,
         .animate-on-scroll.animate.staggered-title span {
+            opacity: 1 !important;
+            filter: blur(0px) !important;
+        }
+
+        .animate-on-scroll { 
+            opacity: 0;
+            filter: blur(12px);
+            transform: translate(-30px, 30px);
+            transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity, filter;
+        }
+        .animate-on-scroll.animate { 
             opacity: 1;
             filter: blur(0px);
             transform: translate(0, 0);
         }
-
-        .animate-on-scroll { animation-play-state: paused !important; }
-        .animate-on-scroll.animate { animation-play-state: running !important; }
 
         .border-gradient {
             position: relative;
@@ -1060,14 +1068,14 @@
 
     // Staggered Title Animations
     document.querySelectorAll('.staggered-title').forEach(el => {
-        const text = el.innerText.trim();
+        const text = el.textContent.trim();
         el.innerHTML = '';
         text.split('').forEach((char, i) => {
             const span = document.createElement('span');
             if(char === ' ') {
                 span.innerHTML = '&nbsp;';
             } else {
-                span.innerText = char;
+                span.textContent = char;
             }
             span.style.transitionDelay = `${i * 30}ms`;
             el.appendChild(span);
