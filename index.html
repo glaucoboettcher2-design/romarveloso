@@ -629,7 +629,7 @@
                     // Calcula o quanto rolou dentro da seção
                     const scrollAmount = window.innerHeight - rect.top;
                     // Move suavemente para baixo (ou para cima)
-                    watermark.style.transform = `translateX(25%) translateY(${(scrollAmount - window.innerHeight) * 0.15}px)`;
+                    watermark.style.transform = `translateX(25%) translateY(${(scrollAmount - window.innerHeight) * -0.5}px)`;
                 }
             }
         });
