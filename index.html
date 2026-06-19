@@ -606,68 +606,76 @@
 
     <!-- SEÇÃO COMO FUNCIONA O ATENDIMENTO -->
     <section id="como-funciona" class="relative py-32 bg-[#080808] overflow-hidden">
-        <!-- Imagem de Fundo com Degradê -->
+        <!-- Imagem de Fundo com Degradê Intenso (Baixo para Cima) -->
         <div class="absolute inset-0 z-0">
-            <img src="Sessão como trabalhamos.png" alt="Como trabalhamos" class="w-full h-full object-cover opacity-25">
-            <div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-transparent to-[#080808]"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-[#080808] via-transparent to-[#080808]"></div>
+            <img src="Sessão como trabalhamos.png" alt="Como trabalhamos" class="w-full h-full object-cover opacity-60">
+            <!-- Degradê pesado de baixo para cima -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/90 to-transparent"></div>
+            <!-- Degradê sutil de cima para baixo para mesclar com a divisória -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-transparent to-transparent h-1/3"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6">
             <!-- Título da Seção -->
-            <div class="mb-16">
-                <div class="w-16 h-1 bg-gradient-to-r from-gold to-gold-light mb-6"></div>
+            <div class="mb-20 text-center flex flex-col items-center">
+                <div class="w-16 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mb-6"></div>
                 <h2 class="font-heading text-4xl md:text-5xl text-white font-bold tracking-wide drop-shadow-md">
                     COMO FUNCIONA O <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light to-gold">ATENDIMENTO</span>
                 </h2>
             </div>
 
-            <!-- Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Cards Sofisticados (Dark Premium) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
                 <!-- Card 1 -->
-                <div class="bg-white rounded-xl p-8 text-center hover:-translate-y-2 transition-transform duration-300 group shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div class="mx-auto w-16 h-16 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] border border-gold/30 transition-all duration-300">
-                        <i data-lucide="message-circle" class="w-8 h-8 text-gold"></i>
+                <div class="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-3 transition-all duration-500 group shadow-[0_10px_40px_rgba(0,0,0,0.8)] hover:border-gold/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] relative overflow-hidden">
+                    <!-- Detalhe Luminoso no Topo -->
+                    <div class="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#1a1a1a] to-[#050505] rounded-full flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] border border-white/5 group-hover:border-gold/50 transition-all duration-500">
+                        <i data-lucide="message-circle" class="w-8 h-8 text-silver group-hover:text-gold transition-colors duration-500"></i>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-[#080808] mb-3">1. Contato Inicial</h3>
-                    <p class="text-gray-600 font-medium leading-relaxed text-sm">
+                    <h3 class="font-heading text-xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">1. Contato</h3>
+                    <p class="text-silver/80 font-light leading-relaxed text-sm">
                         Você chama no WhatsApp e relata sua situação
                     </p>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-white rounded-xl p-8 text-center hover:-translate-y-2 transition-transform duration-300 group shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div class="mx-auto w-16 h-16 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] border border-gold/30 transition-all duration-300">
-                        <i data-lucide="search" class="w-8 h-8 text-gold"></i>
+                <div class="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-3 transition-all duration-500 group shadow-[0_10px_40px_rgba(0,0,0,0.8)] hover:border-gold/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] relative overflow-hidden">
+                    <div class="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#1a1a1a] to-[#050505] rounded-full flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] border border-white/5 group-hover:border-gold/50 transition-all duration-500">
+                        <i data-lucide="search" class="w-8 h-8 text-silver group-hover:text-gold transition-colors duration-500"></i>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-[#080808] mb-3">2. Análise</h3>
-                    <p class="text-gray-600 font-medium leading-relaxed text-sm">
+                    <h3 class="font-heading text-xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">2. Análise</h3>
+                    <p class="text-silver/80 font-light leading-relaxed text-sm">
                         O escritório analisa o seu caso
                     </p>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-white rounded-xl p-8 text-center hover:-translate-y-2 transition-transform duration-300 group shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div class="mx-auto w-16 h-16 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] border border-gold/30 transition-all duration-300">
-                        <i data-lucide="map" class="w-8 h-8 text-gold"></i>
+                <div class="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-3 transition-all duration-500 group shadow-[0_10px_40px_rgba(0,0,0,0.8)] hover:border-gold/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] relative overflow-hidden">
+                    <div class="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#1a1a1a] to-[#050505] rounded-full flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] border border-white/5 group-hover:border-gold/50 transition-all duration-500">
+                        <i data-lucide="map" class="w-8 h-8 text-silver group-hover:text-gold transition-colors duration-500"></i>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-[#080808] mb-3">3. Estratégia</h3>
-                    <p class="text-gray-600 font-medium leading-relaxed text-sm">
+                    <h3 class="font-heading text-xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">3. Estratégia</h3>
+                    <p class="text-silver/80 font-light leading-relaxed text-sm">
                         Definimos juntos o melhor caminho jurídico
                     </p>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="bg-white rounded-xl p-8 text-center hover:-translate-y-2 transition-transform duration-300 group shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div class="mx-auto w-16 h-16 bg-gradient-to-br from-[#1a1a1a] to-[#0d0d0d] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] border border-gold/30 transition-all duration-300">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-gold"></i>
+                <div class="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-3 transition-all duration-500 group shadow-[0_10px_40px_rgba(0,0,0,0.8)] hover:border-gold/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] relative overflow-hidden">
+                    <div class="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#1a1a1a] to-[#050505] rounded-full flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] border border-white/5 group-hover:border-gold/50 transition-all duration-500">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-silver group-hover:text-gold transition-colors duration-500"></i>
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-[#080808] mb-3">4. Ação</h3>
-                    <p class="text-gray-600 font-medium leading-relaxed text-sm">
+                    <h3 class="font-heading text-xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">4. Ação</h3>
+                    <p class="text-silver/80 font-light leading-relaxed text-sm">
                         Cuidamos de todo o processo, com acompanhamento próximo
                     </p>
                 </div>
