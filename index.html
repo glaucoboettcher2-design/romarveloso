@@ -327,7 +327,7 @@
                 <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">O Problema</span>
                 <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Contexto</span>
             </div>
-            <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"><span class="staggered-title">Ameaça ao Seu Patrimônio e</span> <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light staggered-title">Direitos Violados</span></h2>
+            <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"><span class="staggered-title text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white">Ameaça ao Seu Patrimônio e</span> <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light staggered-title">Direitos Violados</span></h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
@@ -441,7 +441,7 @@
                             <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Banca de Advogados</span>
                             <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Equipe</span>
                         </div>
-                        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"><span class="staggered-title">Romar Veloso</span> <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light staggered-title">Advocacia</span></h2>
+                        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"><span class="staggered-title text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white">Romar Veloso</span> <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light staggered-title">Advocacia</span></h2>
                     </div>
 
                     <div class="space-y-6 text-silver leading-relaxed font-light text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
@@ -520,7 +520,7 @@
                     <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Especialidades</span>
                     <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Áreas de Atuação</span>
                 </div>
-                <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Áreas de <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light">Atuação</span></h2>
+                <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"><span class="staggered-title text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white">Áreas de </span><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light staggered-title">Atuação</span></h2>
             </div>
 
             <div class="space-y-32">
@@ -1069,6 +1069,8 @@
     // Staggered Title Animations
     document.querySelectorAll('.staggered-title').forEach(el => {
         const text = el.textContent.trim();
+        const classes = Array.from(el.classList).filter(c => c.startsWith('bg-') || c.startsWith('from-') || c.startsWith('via-') || c.startsWith('to-') || c === 'text-transparent' || c === 'bg-clip-text');
+        
         el.innerHTML = '';
         text.split('').forEach((char, i) => {
             const span = document.createElement('span');
@@ -1077,9 +1079,14 @@
             } else {
                 span.textContent = char;
             }
+            if (classes.length > 0) {
+                span.classList.add(...classes);
+            }
             span.style.transitionDelay = `${i * 30}ms`;
             el.appendChild(span);
         });
+        
+        el.classList.remove('text-transparent', 'bg-clip-text');
         
         if (!el.closest('.animate-on-scroll')) {
             setTimeout(() => el.classList.add('animate'), 300);
