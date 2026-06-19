@@ -918,12 +918,14 @@
     <script>
     // Lógica do Mapa Sticky Scroll
     const flightStops = [
-        { progress: 0.0, city: 'palmas', name: 'Palmas (TO)', desc: 'Sede Principal. Estrutura presencial completa para atendimento tático de alta complexidade.', scale: 1, ox: 50, oy: 50 },
-        { progress: 0.15, city: 'porto-nacional', name: 'Porto Nacional (TO)', desc: 'Atendimento presencial dedicado, aproximando nossa expertise da sua região.', scale: 2.5, ox: 65.6, oy: 38 },
-        { progress: 0.35, city: 'goianorte', name: 'Goianorte (TO)', desc: 'Extensão estratégica de nossos serviços de excelência para o interior do estado.', scale: 2.5, ox: 64, oy: 33 },
-        { progress: 0.55, city: 'tocantinopolis,porto-franco', name: 'Tocantins & Maranhão', desc: 'Forte atuação na fronteira: Tocantinópolis (TO) e Porto Franco (MA).', scale: 2.2, ox: 65.5, oy: 26 },
-        { progress: 0.75, city: 'maceio,propria', name: 'Alagoas & Sergipe', desc: 'Presença consolidada no Nordeste garantindo agilidade e poder nos tribunais: Maceió (AL) e Propriá (SE).', scale: 2.2, ox: 95, oy: 37 },
-        { progress: 0.95, city: 'brasil', name: 'Nível Nacional', desc: 'Independente de onde você esteja, nosso Atendimento Digital entrega a mesma combatividade, segurança e transparência em todo o Brasil.', scale: 1, ox: 50, oy: 50 }
+        { progress: 0.00, city: 'palmas', name: 'Palmas (TO)', desc: 'Sede Principal. Estrutura presencial completa para atendimento tático de alta complexidade.', scale: 1, ox: 50, oy: 50 },
+        { progress: 0.14, city: 'porto-nacional', name: 'Porto Nacional (TO)', desc: 'Atendimento presencial dedicado, aproximando nossa expertise da sua região.', scale: 2.5, ox: 65.6, oy: 38 },
+        { progress: 0.28, city: 'goianorte', name: 'Goianorte (TO)', desc: 'Extensão estratégica de nossos serviços de excelência para o interior do estado.', scale: 2.5, ox: 64, oy: 33 },
+        { progress: 0.42, city: 'tocantinopolis', name: 'Tocantinópolis (TO)', desc: 'Forte atuação e proximidade na região do Bico do Papagaio.', scale: 2.5, ox: 65, oy: 26 },
+        { progress: 0.56, city: 'porto-franco', name: 'Porto Franco (MA)', desc: 'Atendimento estendido para clientes do Maranhão com a mesma agilidade.', scale: 2.5, ox: 66, oy: 26 },
+        { progress: 0.70, city: 'maceio', name: 'Maceió (AL)', desc: 'Presença consolidada na capital alagoana para atuações de peso.', scale: 2.5, ox: 96, oy: 36 },
+        { progress: 0.84, city: 'propria', name: 'Propriá (SE)', desc: 'Garantindo agilidade e poder nos tribunais do interior sergipano.', scale: 2.5, ox: 94, oy: 38 },
+        { progress: 1.00, city: 'brasil', name: 'Nível Nacional', desc: 'Independente de onde você esteja, nosso Atendimento Digital entrega a mesma combatividade, segurança e transparência em todo o Brasil.', scale: 1, ox: 50, oy: 50 }
     ];
 
     const presencaSection = document.getElementById('presenca-regional');
