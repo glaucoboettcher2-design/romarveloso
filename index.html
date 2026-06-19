@@ -306,16 +306,40 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
             
-            <!-- Esquerda: Imagem Temática -->
+            <!-- Esquerda: Imagens Temáticas Alternantes -->
             <div class="lg:col-span-5 relative h-full min-h-[400px] rounded-3xl overflow-hidden glass-panel border-gradient p-2 group">
                 <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
-                <img src="abstract_legal_problem.png" alt="O Problema Legal" class="w-full h-full object-cover rounded-2xl relative z-0" />
-                <!-- Overlay elegante sobre a imagem -->
-                <div class="absolute inset-2 rounded-2xl bg-gradient-to-t from-bgMain/90 via-bgMain/20 to-transparent z-10 pointer-events-none"></div>
                 
+                <!-- Slide 1 -->
+                <div class="problem-slide absolute inset-2 transition-opacity duration-1000 opacity-100 z-0">
+                    <img src="Problema 1.jpg" alt="Ameaça Patrimonial" class="w-full h-full object-cover rounded-2xl" />
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-bgMain/90 via-bgMain/40 to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-6 left-6 right-6 z-20 border-l-2 border-gold/50 pl-4">
+                        <p class="text-sm text-silver-light font-light italic opacity-90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">"Negativas indevidas do INSS e a constante burocracia que desgasta quem busca seus direitos."</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="problem-slide absolute inset-2 transition-opacity duration-1000 opacity-0 z-0">
+                    <img src="Problema 2.jpg" alt="Fraudes Bancárias" class="w-full h-full object-cover rounded-2xl" />
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-bgMain/90 via-bgMain/40 to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-6 left-6 right-6 z-20 border-l-2 border-gold/50 pl-4">
+                        <p class="text-sm text-silver-light font-light italic opacity-90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">"Fraudes financeiras, descontos surpresas e empréstimos não reconhecidos ameaçando sua estabilidade."</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="problem-slide absolute inset-2 transition-opacity duration-1000 opacity-0 z-0">
+                    <img src="Problema 3.png" alt="Desgaste Jurídico" class="w-full h-full object-cover rounded-2xl" />
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-t from-bgMain/90 via-bgMain/40 to-transparent pointer-events-none"></div>
+                    <div class="absolute bottom-6 left-6 right-6 z-20 border-l-2 border-gold/50 pl-4">
+                        <p class="text-sm text-silver-light font-light italic opacity-90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">"O sentimento de impotência diante das falhas e abusos cometidos por grandes instituições."</p>
+                    </div>
+                </div>
+
                 <!-- Badge Flutuante na Imagem -->
-                <div class="absolute bottom-8 left-8 z-20">
-                    <div class="inline-flex items-center gap-2 rounded-full border-gradient bg-black/60 px-4 py-2 text-xs text-silver-light uppercase tracking-widest font-semibold backdrop-blur-md">
+                <div class="absolute top-6 left-6 z-20">
+                    <div class="inline-flex items-center gap-2 rounded-full border-gradient bg-black/60 px-4 py-2 text-xs text-silver-light uppercase tracking-widest font-semibold backdrop-blur-md shadow-[0_0_15px_rgba(0,0,0,0.8)]">
                         <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
                         Atenção Necessária
                     </div>
@@ -995,6 +1019,20 @@
     }
 
     lucide.createIcons();
+    // Slider O Problema
+    const problemSlides = document.querySelectorAll('.problem-slide');
+    if (problemSlides.length > 0) {
+        let currentProblemSlide = 0;
+        setInterval(() => {
+            problemSlides[currentProblemSlide].classList.remove('opacity-100', 'z-10');
+            problemSlides[currentProblemSlide].classList.add('opacity-0', 'z-0');
+            
+            currentProblemSlide = (currentProblemSlide + 1) % problemSlides.length;
+            
+            problemSlides[currentProblemSlide].classList.remove('opacity-0', 'z-0');
+            problemSlides[currentProblemSlide].classList.add('opacity-100', 'z-10');
+        }, 5000);
+    }
     </script>
 </body>
 </html>
