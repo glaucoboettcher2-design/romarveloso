@@ -606,90 +606,119 @@
 
     <!-- SEÇÃO COMO FUNCIONA O ATENDIMENTO -->
     <section id="como-funciona" class="relative py-32 bg-[#080808] overflow-hidden">
-        <!-- Imagem de Fundo com Degradê (Cima para Baixo) -->
-        <!-- Imagem de Fundo com Degradê Corrigido -->
+        <!-- Imagem de Fundo (Ajustada sem top-32 já que a imagem foi alterada) -->
         <div class="absolute inset-0 z-0 bg-[#080808]">
-            <!-- Imagem começando um pouco mais abaixo para não cortar a estátua (top-32 cria a faixa escura) -->
-            <div class="absolute inset-x-0 top-32 bottom-0">
-                <img src="Sessão como trabalhamos.png" alt="Como trabalhamos" class="w-full h-full object-cover object-top opacity-40">
+            <div class="absolute inset-0">
+                <img src="Sessão como trabalhamos.png" alt="Como trabalhamos" class="w-full h-full object-cover object-top opacity-30">
             </div>
             
-            <!-- Degradê escuro do topo para baixo, para mesclar a borda da imagem com a faixa preta -->
-            <div class="absolute inset-x-0 top-32 h-64 bg-gradient-to-b from-[#080808] via-[#080808]/80 to-transparent"></div>
+            <!-- Degradê escuro do topo para baixo para o título -->
+            <div class="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-[#080808] via-[#080808]/90 to-transparent"></div>
             
-            <!-- Degradê leve de baixo para cima, apenas para dar contraste aos cards -->
-            <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#080808]/60 to-transparent"></div>
+            <!-- Degradê para mesclar com a próxima seção -->
+            <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#080808] to-transparent"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6">
             <!-- Título da Seção -->
-            <div class="mb-20 text-center flex flex-col items-center">
+            <div class="mb-24 text-center flex flex-col items-center">
                 <div class="w-16 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mb-6"></div>
                 <h2 class="font-heading text-4xl md:text-5xl text-white font-bold tracking-wide drop-shadow-md">
                     COMO FUNCIONA O <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light to-gold">ATENDIMENTO</span>
                 </h2>
             </div>
 
-            <!-- Cards Sofisticados (Dark Premium) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Cards Diferenciados (Minimalismo Editorial) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 mt-16 relative">
                 
-                <!-- Card 1 -->
-                <div class="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-3 transition-all duration-500 group shadow-[0_10px_40px_rgba(0,0,0,0.8)] hover:border-gold/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] relative overflow-hidden">
-                    <!-- Detalhe Luminoso no Topo -->
-                    <div class="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#1a1a1a] to-[#050505] rounded-full flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] border border-white/5 group-hover:border-gold/50 transition-all duration-500">
-                        <i data-lucide="message-circle" class="w-8 h-8 text-silver group-hover:text-gold transition-colors duration-500"></i>
+                <!-- Linha conectora no fundo (visível apenas desktop) -->
+                <div class="hidden lg:block absolute top-12 left-0 w-full h-[1px] bg-gradient-to-r from-gold/0 via-gold/30 to-gold/0 z-0"></div>
+
+                <!-- Passo 1 -->
+                <div class="relative group pt-12">
+                    <!-- Huge Number Background -->
+                    <div class="absolute -top-16 -left-2 text-[140px] font-heading font-black text-white/[0.02] group-hover:text-gold/[0.05] group-hover:-translate-y-3 transition-all duration-700 pointer-events-none select-none leading-none z-0">
+                        01
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">1. Contato</h3>
-                    <p class="text-silver/80 font-light leading-relaxed text-sm">
-                        Você chama no WhatsApp e relata sua situação
-                    </p>
+                    
+                    <div class="relative z-10 border-t border-white/10 group-hover:border-gold/50 pt-8 transition-colors duration-500">
+                        <!-- Ícone Flutuante na Borda -->
+                        <div class="absolute -top-7 left-6 w-14 h-14 bg-[#080808] border border-gold/30 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-500">
+                            <i data-lucide="message-circle" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        
+                        <h3 class="font-heading text-2xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">Contato Inicial</h3>
+                        <p class="text-silver/80 font-light leading-relaxed text-sm">
+                            Você chama no WhatsApp e relata sua situação de forma detalhada e segura.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-3 transition-all duration-500 group shadow-[0_10px_40px_rgba(0,0,0,0.8)] hover:border-gold/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] relative overflow-hidden">
-                    <div class="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#1a1a1a] to-[#050505] rounded-full flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] border border-white/5 group-hover:border-gold/50 transition-all duration-500">
-                        <i data-lucide="search" class="w-8 h-8 text-silver group-hover:text-gold transition-colors duration-500"></i>
+                <!-- Passo 2 -->
+                <div class="relative group pt-12 lg:mt-12">
+                    <!-- Huge Number Background -->
+                    <div class="absolute -top-16 -left-2 text-[140px] font-heading font-black text-white/[0.02] group-hover:text-gold/[0.05] group-hover:-translate-y-3 transition-all duration-700 pointer-events-none select-none leading-none z-0">
+                        02
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">2. Análise</h3>
-                    <p class="text-silver/80 font-light leading-relaxed text-sm">
-                        O escritório analisa o seu caso
-                    </p>
+                    
+                    <div class="relative z-10 border-t border-white/10 group-hover:border-gold/50 pt-8 transition-colors duration-500">
+                        <!-- Ícone Flutuante na Borda -->
+                        <div class="absolute -top-7 left-6 w-14 h-14 bg-[#080808] border border-gold/30 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-500">
+                            <i data-lucide="search" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        
+                        <h3 class="font-heading text-2xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">Análise Tática</h3>
+                        <p class="text-silver/80 font-light leading-relaxed text-sm">
+                            Nossa equipe estuda meticulosamente os detalhes e viabilidade do seu caso.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-3 transition-all duration-500 group shadow-[0_10px_40px_rgba(0,0,0,0.8)] hover:border-gold/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] relative overflow-hidden">
-                    <div class="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#1a1a1a] to-[#050505] rounded-full flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] border border-white/5 group-hover:border-gold/50 transition-all duration-500">
-                        <i data-lucide="map" class="w-8 h-8 text-silver group-hover:text-gold transition-colors duration-500"></i>
+                <!-- Passo 3 -->
+                <div class="relative group pt-12">
+                    <!-- Huge Number Background -->
+                    <div class="absolute -top-16 -left-2 text-[140px] font-heading font-black text-white/[0.02] group-hover:text-gold/[0.05] group-hover:-translate-y-3 transition-all duration-700 pointer-events-none select-none leading-none z-0">
+                        03
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">3. Estratégia</h3>
-                    <p class="text-silver/80 font-light leading-relaxed text-sm">
-                        Definimos juntos o melhor caminho jurídico
-                    </p>
+                    
+                    <div class="relative z-10 border-t border-white/10 group-hover:border-gold/50 pt-8 transition-colors duration-500">
+                        <!-- Ícone Flutuante na Borda -->
+                        <div class="absolute -top-7 left-6 w-14 h-14 bg-[#080808] border border-gold/30 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-500">
+                            <i data-lucide="map" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        
+                        <h3 class="font-heading text-2xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">Estratégia</h3>
+                        <p class="text-silver/80 font-light leading-relaxed text-sm">
+                            Apresentamos as soluções e definimos juntos o caminho jurídico mais agressivo.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center hover:-translate-y-3 transition-all duration-500 group shadow-[0_10px_40px_rgba(0,0,0,0.8)] hover:border-gold/40 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] relative overflow-hidden">
-                    <div class="absolute top-0 left-1/4 right-1/4 h-[2px] bg-gradient-to-r from-transparent via-gold/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <div class="mx-auto w-20 h-20 bg-gradient-to-br from-[#1a1a1a] to-[#050505] rounded-full flex items-center justify-center mb-8 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.3)] border border-white/5 group-hover:border-gold/50 transition-all duration-500">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-silver group-hover:text-gold transition-colors duration-500"></i>
+                <!-- Passo 4 -->
+                <div class="relative group pt-12 lg:mt-12">
+                    <!-- Huge Number Background -->
+                    <div class="absolute -top-16 -left-2 text-[140px] font-heading font-black text-white/[0.02] group-hover:text-gold/[0.05] group-hover:-translate-y-3 transition-all duration-700 pointer-events-none select-none leading-none z-0">
+                        04
                     </div>
-                    <h3 class="font-heading text-xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">4. Ação</h3>
-                    <p class="text-silver/80 font-light leading-relaxed text-sm">
-                        Cuidamos de todo o processo, com acompanhamento próximo
-                    </p>
+                    
+                    <div class="relative z-10 border-t border-white/10 group-hover:border-gold/50 pt-8 transition-colors duration-500">
+                        <!-- Ícone Flutuante na Borda -->
+                        <div class="absolute -top-7 left-6 w-14 h-14 bg-[#080808] border border-gold/30 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-500">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        
+                        <h3 class="font-heading text-2xl font-bold text-white mb-4 tracking-wide group-hover:text-gold-light transition-colors duration-500">Execução</h3>
+                        <p class="text-silver/80 font-light leading-relaxed text-sm">
+                            Cuidamos de todo o processo judicial, com relatórios constantes do avanço.
+                        </p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
     
-    <!-- Scripts de inicialização -->
+    <!-- Scripts de inicialização --><!-- Scripts de inicialização -->
     <script>
         // Inicializar Lucide Icons
         lucide.createIcons();
