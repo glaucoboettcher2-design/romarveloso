@@ -718,6 +718,119 @@
         </div>
     </section>
     
+    
+    <!-- DIVISOR -->
+    <div class="w-full relative z-20">
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-gold/60 to-transparent"></div>
+    </div>
+
+    <!-- SEÇÃO PRESENÇA REGIONAL (STICKY SCROLL MAP) -->
+    <section id="presenca-regional" class="relative h-[400vh] bg-[#080808]">
+        <!-- Conteúdo Fixo (Sticky) -->
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-[#080808]">
+            
+            <!-- Degradê de fundo -->
+            <div class="absolute inset-0 bg-gradient-to-b from-bgMain via-[#0a0a0a] to-[#050505] z-0"></div>
+
+            <!-- Mapa SVG e Pontos da Câmera -->
+            <div id="map-container" class="absolute inset-0 w-full h-full flex items-center justify-center transition-transform duration-300 ease-out will-change-transform z-10" style="transform: scale(1) translate(0px, 0px);">
+                
+                <div class="relative w-[1000px] h-[1000px] opacity-60">
+                    <!-- Textura de Rede/Mapa Abstrata -->
+                    <div class="absolute inset-0 border-[0.5px] border-white/5 rounded-full blur-[1px]"></div>
+                    <div class="absolute inset-20 border-[0.5px] border-gold/10 rounded-full blur-[2px]"></div>
+                    <div class="absolute inset-40 border-[0.5px] border-white/5 rounded-full blur-[1px]"></div>
+                    
+                    <svg class="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1000 1000">
+                        <!-- Malha de Conexões Geográficas Abstratas (Estilo High-Tech Law) -->
+                        <path d="M550,400 L540,420 L520,380 L530,250 L540,240 L800,300 L780,330" fill="none" stroke="#D4AF37" stroke-width="1" stroke-dasharray="4 4" />
+                        <path d="M550,400 L800,300" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3" />
+                        <path d="M540,420 L780,330" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3" />
+                    </svg>
+                    
+                    <!-- PONTOS DAS CIDADES (Posicionamento Relativo Fake Map) -->
+                    <!-- Sede: Palmas (TO) -->
+                    <div class="city-point absolute top-[40%] left-[55%] flex items-center justify-center group z-20 transition-all duration-500" data-city="palmas">
+                        <div class="w-4 h-4 bg-gold rounded-full shadow-[0_0_25px_#D4AF37]"></div>
+                        <div class="absolute w-16 h-16 border border-gold/40 rounded-full animate-ping"></div>
+                    </div>
+
+                    <!-- Porto Nacional (TO) -->
+                    <div class="city-point absolute top-[42%] left-[54%] flex items-center justify-center opacity-30 transition-all duration-500 z-10" data-city="porto-nacional">
+                        <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_10px_white]"></div>
+                    </div>
+
+                    <!-- Goianorte (TO) -->
+                    <div class="city-point absolute top-[38%] left-[52%] flex items-center justify-center opacity-30 transition-all duration-500 z-10" data-city="goianorte">
+                        <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_10px_white]"></div>
+                    </div>
+
+                    <!-- Tocantinópolis (TO) -->
+                    <div class="city-point absolute top-[25%] left-[53%] flex items-center justify-center opacity-30 transition-all duration-500 z-10" data-city="tocantinopolis">
+                        <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_10px_white]"></div>
+                    </div>
+
+                    <!-- Porto Franco (MA) -->
+                    <div class="city-point absolute top-[24%] left-[54%] flex items-center justify-center opacity-30 transition-all duration-500 z-10" data-city="porto-franco">
+                        <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_10px_white]"></div>
+                    </div>
+
+                    <!-- Maceió (AL) -->
+                    <div class="city-point absolute top-[30%] left-[80%] flex items-center justify-center opacity-30 transition-all duration-500 z-10" data-city="maceio">
+                        <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_10px_white]"></div>
+                    </div>
+
+                    <!-- Propriá (SE) -->
+                    <div class="city-point absolute top-[33%] left-[78%] flex items-center justify-center opacity-30 transition-all duration-500 z-10" data-city="propria">
+                        <div class="w-3 h-3 bg-white rounded-full shadow-[0_0_10px_white]"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overlay de Texto Fixo por Cima da Câmera -->
+            <div class="absolute inset-0 pointer-events-none flex flex-col justify-between py-24 px-6 md:px-12 lg:px-24 z-30">
+                <div class="max-w-7xl mx-auto w-full">
+                    <h2 class="font-heading text-4xl md:text-5xl text-white font-bold tracking-wide drop-shadow-md mb-4">
+                        PRESENÇA <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light to-gold">REGIONAL</span>
+                    </h2>
+                    <p class="text-silver/80 text-lg max-w-xl">Atuação física estratégica e cobertura digital absoluta em todo o território nacional.</p>
+                </div>
+
+                <!-- Painel da Cidade Ativa -->
+                <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-end justify-end pb-12">
+                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 w-full md:w-[400px] shadow-[0_20px_50px_rgba(0,0,0,0.9)] pointer-events-auto relative overflow-hidden">
+                        <!-- Glow effect inside card -->
+                        <div class="absolute -top-20 -right-20 w-40 h-40 bg-gold/10 blur-[50px] rounded-full"></div>
+                        
+                        <h3 id="active-city-name" class="font-heading text-3xl font-bold text-gold mb-3 transition-all duration-300">Palmas (TO)</h3>
+                        <p id="active-city-desc" class="text-silver font-light leading-relaxed text-sm transition-all duration-300">Sede Principal. Estrutura presencial completa para atendimento tático de alta complexidade.</p>
+                        
+                        <div class="mt-8 pt-6 border-t border-white/10">
+                            <div class="flex items-center gap-4 group">
+                                <div class="w-10 h-10 bg-[#0a0a0a] border border-gold/30 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <i data-lucide="globe" class="w-4 h-4 text-gold"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-white font-bold text-sm tracking-wide">ATENDIMENTO DIGITAL</span>
+                                    <span class="text-silver/60 text-xs uppercase tracking-widest">Todo o Brasil</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-40 z-30">
+                <span class="text-[10px] text-silver tracking-[0.3em] uppercase font-bold">Explore</span>
+                <i data-lucide="chevron-down" class="w-5 h-5 text-gold"></i>
+            </div>
+            
+            <!-- Vignette Edge Fades -->
+            <div class="absolute inset-0 pointer-events-none shadow-[inset_0_0_150px_rgba(8,8,8,1)] z-20"></div>
+        </div>
+    </section>
+    
     <!-- Scripts de inicialização --><!-- Scripts de inicialização -->
     <script>
         // Inicializar Lucide Icons
@@ -803,6 +916,87 @@
                 counterObserver.observe(counter);
             });
         })();
+    </script>
+
+    // Lógica do Mapa Sticky Scroll
+    const flightStops = [
+        { progress: 0.0, city: 'palmas', name: 'Palmas (TO)', desc: 'Sede Principal. Estrutura presencial completa para atendimento tático de alta complexidade.', scale: 1, x: 0, y: 0 },
+        { progress: 0.15, city: 'porto-nacional', name: 'Porto Nacional (TO)', desc: 'Atendimento presencial dedicado, aproximando nossa expertise da sua região.', scale: 1.6, x: -50, y: -100 },
+        { progress: 0.35, city: 'goianorte', name: 'Goianorte (TO)', desc: 'Extensão estratégica de nossos serviços de excelência para o interior do estado.', scale: 2.2, x: 150, y: 300 },
+        { progress: 0.55, city: 'tocantinopolis,porto-franco', name: 'Tocantins & Maranhão', desc: 'Forte atuação na fronteira: Tocantinópolis (TO) e Porto Franco (MA).', scale: 1.8, x: -100, y: 600 },
+        { progress: 0.75, city: 'maceio,propria', name: 'Alagoas & Sergipe', desc: 'Presença consolidada no Nordeste garantindo agilidade e poder nos tribunais: Maceió (AL) e Propriá (SE).', scale: 1.5, x: -800, y: 200 },
+        { progress: 0.95, city: 'brasil', name: 'Nível Nacional', desc: 'Independente de onde você esteja, nosso Atendimento Digital entrega a mesma combatividade, segurança e transparência em todo o Brasil.', scale: 1, x: 0, y: 0 }
+    ];
+
+    const presencaSection = document.getElementById('presenca-regional');
+    const mapContainer = document.getElementById('map-container');
+    const cityNameEl = document.getElementById('active-city-name');
+    const cityDescEl = document.getElementById('active-city-desc');
+    const cityPoints = document.querySelectorAll('.city-point');
+
+    if (presencaSection && mapContainer) {
+        window.addEventListener('scroll', () => {
+            const rect = presencaSection.getBoundingClientRect();
+            const sectionHeight = rect.height - window.innerHeight; 
+            let progress = -rect.top / sectionHeight;
+            
+            progress = Math.max(0, Math.min(1, progress));
+
+            if (progress >= 0 && progress <= 1) {
+                let currentStop = flightStops[0];
+                let nextStop = flightStops[flightStops.length - 1];
+
+                for (let i = 0; i < flightStops.length - 1; i++) {
+                    if (progress >= flightStops[i].progress && progress <= flightStops[i+1].progress) {
+                        currentStop = flightStops[i];
+                        nextStop = flightStops[i+1];
+                        break;
+                    }
+                }
+
+                const segmentProgress = (progress - currentStop.progress) / (nextStop.progress - currentStop.progress) || 0;
+                
+                // Ease In Out para a câmera
+                const easeSegment = segmentProgress < 0.5 ? 2 * segmentProgress * segmentProgress : -1 + (4 - 2 * segmentProgress) * segmentProgress;
+                
+                const currentScale = currentStop.scale + (nextStop.scale - currentStop.scale) * easeSegment;
+                const currentX = currentStop.x + (nextStop.x - currentStop.x) * easeSegment;
+                const currentY = currentStop.y + (nextStop.y - currentStop.y) * easeSegment;
+
+                mapContainer.style.transform = `scale(${currentScale}) translate(${currentX}px, ${currentY}px)`;
+
+                const activeStop = segmentProgress < 0.5 ? currentStop : nextStop;
+                if (cityNameEl.innerText !== activeStop.name) {
+                    cityNameEl.style.opacity = 0;
+                    cityDescEl.style.opacity = 0;
+                    setTimeout(() => {
+                        cityNameEl.innerText = activeStop.name;
+                        cityDescEl.innerText = activeStop.desc;
+                        cityNameEl.style.opacity = 1;
+                        cityDescEl.style.opacity = 1;
+                    }, 150);
+
+                    cityPoints.forEach(point => {
+                        if (activeStop.city.includes(point.dataset.city) || activeStop.city === 'brasil') {
+                            point.classList.remove('opacity-30');
+                            point.classList.add('opacity-100', 'scale-125', 'z-30');
+                            point.firstElementChild.classList.add('bg-gold', 'shadow-[0_0_20px_#D4AF37]');
+                            point.firstElementChild.classList.remove('bg-white', 'shadow-[0_0_10px_white]');
+                            if(point.children.length > 1) point.children[1].classList.remove('hidden');
+                        } else {
+                            point.classList.add('opacity-30');
+                            point.classList.remove('opacity-100', 'scale-125', 'z-30');
+                            point.firstElementChild.classList.remove('bg-gold', 'shadow-[0_0_20px_#D4AF37]');
+                            point.firstElementChild.classList.add('bg-white', 'shadow-[0_0_10px_white]');
+                            if(point.children.length > 1) point.children[1].classList.add('hidden');
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    lucide.createIcons();
     </script>
 </body>
 </html>
