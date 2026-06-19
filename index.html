@@ -606,13 +606,13 @@
 
     <!-- SEÇÃO COMO FUNCIONA O ATENDIMENTO -->
     <section id="como-funciona" class="relative py-32 bg-[#080808] overflow-hidden">
-        <!-- Imagem de Fundo com Degradê Intenso (Baixo para Cima) -->
+        <!-- Imagem de Fundo com Degradê (Cima para Baixo) -->
         <div class="absolute inset-0 z-0">
-            <img src="Sessão como trabalhamos.png" alt="Como trabalhamos" class="w-full h-full object-cover opacity-60">
-            <!-- Degradê pesado de baixo para cima -->
-            <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/90 to-transparent"></div>
-            <!-- Degradê sutil de cima para baixo para mesclar com a divisória -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-transparent to-transparent h-1/3"></div>
+            <img src="Sessão como trabalhamos.png" alt="Como trabalhamos" class="w-full h-full object-cover object-bottom opacity-80">
+            <!-- Degradê PESADO de CIMA para BAIXO (cobre o título e revela a imagem embaixo) -->
+            <div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-[#080808]/80 to-transparent"></div>
+            <!-- Degradê sutil de baixo para cima apenas para a borda inferior mesclar -->
+            <div class="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#080808] to-transparent"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6">
