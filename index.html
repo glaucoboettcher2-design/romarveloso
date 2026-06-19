@@ -454,7 +454,7 @@
     </div>
 
     <!-- SEÇÃO ÁREAS DE ATUAÇÃO -->
-    <section id="atuacao" class="relative py-24 bg-[#080808] overflow-hidden animate-on-scroll">
+    <section id="atuacao" class="relative py-32 bg-[#080808] overflow-hidden animate-on-scroll">
         <!-- Background elements for depth -->
         <div class="absolute top-0 left-1/4 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -465,90 +465,44 @@
                 <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Áreas de <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light">Atuação</span></h2>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <!-- Card 1: Previdenciário -->
-                <div class="group relative bg-[#0d0d0d] border border-white/5 p-10 md:p-14 rounded-3xl hover:-translate-y-2 transition-all duration-500 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:border-gold/30 hover:shadow-[0_15px_50px_rgba(212,175,55,0.1)]">
-                    <!-- Subtle glow inside on hover -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-                    
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#151515] to-[#0a0a0a] border border-gold/20 flex items-center justify-center text-gold mb-8 shadow-[0_0_15px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_25px_rgba(212,175,55,0.25)] transition-all duration-500">
-                            <i data-lucide="shield-check" class="w-8 h-8"></i>
+            <div class="space-y-32">
+                <!-- Direito Previdenciário: Imagem à esquerda, Texto à direita -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center group">
+                    <div class="relative overflow-hidden rounded-3xl border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.5)] group-hover:border-gold/30 transition-all duration-700 h-[500px]">
+                        <img src="img_previdenciario.png" alt="Direito Previdenciário" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 grayscale-[20%] group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#151515] to-[#0a0a0a] border border-gold/20 flex items-center justify-center text-gold mb-6 shadow-[0_0_15px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-shadow duration-500">
+                            <i data-lucide="shield-check" class="w-7 h-7"></i>
                         </div>
-                        
-                        <h3 class="font-heading text-3xl text-transparent bg-clip-text bg-gradient-to-r from-silver-dark via-silver-light to-white mb-8 group-hover:text-gold transition-colors duration-500">Direito Previdenciário</h3>
-                        
-                        <ul class="space-y-5">
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Aposentadorias</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Salário-maternidade</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Benefícios por incapacidade</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Pensão por morte</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">BPC/LOAS</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Revisão de benefícios</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Planejamento previdenciário</span>
-                            </li>
-                        </ul>
+                        <h3 class="font-heading text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-silver-dark via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Direito Previdenciário</h3>
+                        <p class="text-silver leading-relaxed font-light text-lg">
+                            O Direito Previdenciário é a garantia do seu futuro e da sua dignidade após anos de contribuição e trabalho árduo. Atuamos de forma incisiva e humanizada para assegurar que você receba exatamente o benefício a que tem direito.
+                        </p>
+                        <p class="text-silver leading-relaxed font-light text-lg">
+                            Analisamos cada caso com precisão técnica incomparável, orientando você nos processos de aposentadoria, pedidos de auxílio, revisões de valores incorretos e na construção de um planejamento previdenciário seguro para o futuro da sua família.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Card 2: Bancário -->
-                <div class="group relative bg-[#0d0d0d] border border-white/5 p-10 md:p-14 rounded-3xl hover:-translate-y-2 transition-all duration-500 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] hover:border-gold/30 hover:shadow-[0_15px_50px_rgba(212,175,55,0.1)]">
-                    <!-- Subtle glow inside on hover -->
-                    <div class="absolute inset-0 bg-gradient-to-bl from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-                    
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#151515] to-[#0a0a0a] border border-gold/20 flex items-center justify-center text-gold mb-8 shadow-[0_0_15px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_25px_rgba(212,175,55,0.25)] transition-all duration-500">
-                            <i data-lucide="landmark" class="w-8 h-8"></i>
+                <!-- Direito Bancário: Texto à esquerda, Imagem à direita (Invertido no desktop) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center group">
+                    <div class="space-y-6 order-2 lg:order-1">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#151515] to-[#0a0a0a] border border-gold/20 flex items-center justify-center text-gold mb-6 shadow-[0_0_15px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-shadow duration-500">
+                            <i data-lucide="landmark" class="w-7 h-7"></i>
                         </div>
-                        
-                        <h3 class="font-heading text-3xl text-transparent bg-clip-text bg-gradient-to-r from-silver-dark via-silver-light to-white mb-8 group-hover:text-gold transition-colors duration-500">Direito Bancário</h3>
-                        
-                        <ul class="space-y-5">
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Fraudes bancárias</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Golpes financeiros</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Empréstimos não contratados</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg">Descontos indevidos</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg text-balance">Compras e transferências não reconhecidas</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-silver group/item hover:text-white transition-colors duration-300">
-                                <div class="w-2 h-2 rounded-full bg-gold/40 group-hover/item:bg-gold group-hover/item:shadow-[0_0_8px_rgba(212,175,55,0.8)] transition-all duration-300 shrink-0"></div>
-                                <span class="font-light tracking-wide text-lg text-balance">Responsabilização de instituições financeiras</span>
-                            </li>
-                        </ul>
+                        <h3 class="font-heading text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-silver-dark via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Direito Bancário</h3>
+                        <p class="text-silver leading-relaxed font-light text-lg">
+                            Diante de fraudes crescentes, cobranças indevidas e abusos por parte de instituições financeiras, nossa atuação no Direito Bancário serve como um escudo absoluto de proteção para o seu patrimônio.
+                        </p>
+                        <p class="text-silver leading-relaxed font-light text-lg">
+                            Lutamos de forma rigorosa, agressiva e estratégica contra golpes financeiros, empréstimos não contratados que corroem a sua renda e juros abusivos. Nosso objetivo é responsabilizar os bancos e devolver a estabilidade e a tranquilidade financeira que lhe foi tomada injustamente.
+                        </p>
+                    </div>
+                    <div class="relative overflow-hidden rounded-3xl border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.5)] group-hover:border-gold/30 transition-all duration-700 h-[500px] order-1 lg:order-2">
+                        <img src="img_bancario.png" alt="Direito Bancário" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 grayscale-[20%] group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-90 pointer-events-none"></div>
                     </div>
                 </div>
             </div>
