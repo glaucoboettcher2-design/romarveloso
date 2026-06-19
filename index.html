@@ -35,8 +35,24 @@
         /* Animações e Efeitos do Aura/Apple */
         
         @keyframes fadeSlideIn {
-            0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
-            100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+            0% { opacity: 0; transform: translate(-30px, 30px); filter: blur(12px); }
+            100% { opacity: 1; transform: translate(0, 0); filter: blur(0px); }
+        }
+
+        .staggered-title span {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(12px);
+            transform: translate(-20px, 20px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform, opacity, filter;
+        }
+        .staggered-title.animate span,
+        .animate-on-scroll.animate .staggered-title span,
+        .animate-on-scroll.animate.staggered-title span {
+            opacity: 1;
+            filter: blur(0px);
+            transform: translate(0, 0);
         }
 
         .animate-on-scroll { animation-play-state: paused !important; }
@@ -226,10 +242,10 @@
             <div class="[animation:fadeSlideIn_1s_ease-out_0.2s_both] space-y-8">
                 
                 <div class="flex flex-col">
-                    <h1 class="font-heading text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1] text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white uppercase">
+                    <h1 class="staggered-title font-heading text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] leading-[1] text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white uppercase">
                         ROMAR VELOSO
                     </h1>
-                    <span class="font-body text-2xl md:text-3xl lg:text-4xl tracking-[0.6em] font-thin uppercase text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light mt-2 ml-2 block">
+                    <span class="staggered-title font-body text-2xl md:text-3xl lg:text-4xl tracking-[0.6em] font-thin uppercase text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light mt-2 ml-2 block">
                         Advocacia
                     </span>
                 </div>
@@ -299,8 +315,11 @@
     <section id="problema" class="max-w-7xl mx-auto px-6 py-20 relative animate-on-scroll">
         <!-- Título da Seção -->
         <div class="mb-16">
-            <span class="text-gold font-bold tracking-widest text-sm uppercase mb-2 block drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">O Problema</span>
-            <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Ameaça ao Seu Patrimônio e <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light">Direitos Violados</span></h2>
+            <div class="flex justify-between items-center border-b border-white/20 pb-3 mb-8 w-full">
+                <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">O Problema</span>
+                <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Contexto</span>
+            </div>
+            <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"><span class="staggered-title">Ameaça ao Seu Patrimônio e</span> <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light staggered-title">Direitos Violados</span></h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
@@ -410,8 +429,11 @@
                 <!-- Coluna de Texto -->
                 <div class="space-y-8">
                     <div>
-                        <span class="text-gold font-bold tracking-widest text-sm uppercase mb-2 block drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Sobre o Escritório</span>
-                        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Romar Veloso <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light">Advocacia</span></h2>
+                        <div class="flex justify-between items-center border-b border-white/20 pb-3 mb-6 w-full">
+                            <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Banca de Advogados</span>
+                            <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Equipe</span>
+                        </div>
+                        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"><span class="staggered-title">Romar Veloso</span> <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light staggered-title">Advocacia</span></h2>
                     </div>
 
                     <div class="space-y-6 text-silver leading-relaxed font-light text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
@@ -486,7 +508,10 @@
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                <span class="text-gold font-bold tracking-widest text-sm uppercase">Nossas Especialidades</span>
+                <div class="flex justify-between items-center border-b border-white/20 pb-3 mb-6 w-full">
+                    <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Especialidades</span>
+                    <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Áreas de Atuação</span>
+                </div>
                 <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Áreas de <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light">Atuação</span></h2>
             </div>
 
@@ -1032,6 +1057,26 @@
             problemSlides[currentProblemSlide].classList.add('opacity-100', 'z-10');
         }, 5000);
     }
+
+    // Staggered Title Animations
+    document.querySelectorAll('.staggered-title').forEach(el => {
+        const text = el.innerText.trim();
+        el.innerHTML = '';
+        text.split('').forEach((char, i) => {
+            const span = document.createElement('span');
+            if(char === ' ') {
+                span.innerHTML = '&nbsp;';
+            } else {
+                span.innerText = char;
+            }
+            span.style.transitionDelay = `${i * 30}ms`;
+            el.appendChild(span);
+        });
+        
+        if (!el.closest('.animate-on-scroll')) {
+            setTimeout(() => el.classList.add('animate'), 300);
+        }
+    });
     </script>
 </body>
 </html>
