@@ -461,7 +461,7 @@
 
         <!-- Logo Watermark -->
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-            <img id="watermark-logo" src="Logo bordas.png" alt="" class="w-[80%] max-w-[900px] opacity-[0.12] blur-[3px] object-contain transform translate-x-[25%] transition-transform duration-[1500ms] ease-out">
+            <img id="watermark-logo" src="Logo bordas.png" alt="" class="w-[120%] max-w-[1300px] opacity-[0.12] blur-[3px] object-contain transform translate-x-[25%] transition-transform duration-[1500ms] ease-out">
         </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -629,7 +629,7 @@
                     // Calcula o quanto rolou dentro da seção
                     const scrollAmount = window.innerHeight - rect.top;
                     // Move suavemente para baixo (ou para cima)
-                    watermark.style.transform = `translateX(25%) translateY(${(scrollAmount - window.innerHeight) * -0.5}px)`;
+                    watermark.style.transform = `translateX(25%) translateY(${(scrollAmount - window.innerHeight) * -0.5 + 400}px)`;
                 }
             }
         });
