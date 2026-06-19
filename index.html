@@ -742,7 +742,7 @@
                     <div class="absolute inset-40 border-[0.5px] border-white/5 rounded-full blur-[1px]"></div>
                     
                     <!-- WRAPPER COM ASPECT RATIO MATEMÁTICO (613x639 do SVG) PARA PRECISÃO ABSOLUTA -->
-                    <div class="relative w-[95%] sm:w-[80%] max-w-[613px] aspect-[613/639] mx-auto flex-shrink-0">
+                    <div id="map-wrapper" class="relative w-[95%] sm:w-[80%] max-w-[613px] aspect-[613/639] mx-auto flex-shrink-0 transition-transform duration-75">
                         <img src="mapa-brasil.svg" class="absolute inset-0 w-full h-full opacity-30 drop-shadow-[0_0_30px_rgba(212,175,55,0.4)] mix-blend-screen" style="filter: grayscale(100%) invert(100%) brightness(150%);" alt="Mapa do Brasil" />
                         
                         <!-- Sede: Palmas (TO) -->
@@ -918,21 +918,21 @@
     <script>
     // Lógica do Mapa Sticky Scroll
     const flightStops = [
-        { progress: 0.0, city: 'palmas', name: 'Palmas (TO)', desc: 'Sede Principal. Estrutura presencial completa para atendimento tático de alta complexidade.', scale: 1, x: 0, y: 0 },
-        { progress: 0.15, city: 'porto-nacional', name: 'Porto Nacional (TO)', desc: 'Atendimento presencial dedicado, aproximando nossa expertise da sua região.', scale: 1.6, x: -50, y: -100 },
-        { progress: 0.35, city: 'goianorte', name: 'Goianorte (TO)', desc: 'Extensão estratégica de nossos serviços de excelência para o interior do estado.', scale: 2.2, x: 150, y: 300 },
-        { progress: 0.55, city: 'tocantinopolis,porto-franco', name: 'Tocantins & Maranhão', desc: 'Forte atuação na fronteira: Tocantinópolis (TO) e Porto Franco (MA).', scale: 1.8, x: -100, y: 600 },
-        { progress: 0.75, city: 'maceio,propria', name: 'Alagoas & Sergipe', desc: 'Presença consolidada no Nordeste garantindo agilidade e poder nos tribunais: Maceió (AL) e Propriá (SE).', scale: 1.5, x: -800, y: 200 },
-        { progress: 0.95, city: 'brasil', name: 'Nível Nacional', desc: 'Independente de onde você esteja, nosso Atendimento Digital entrega a mesma combatividade, segurança e transparência em todo o Brasil.', scale: 1, x: 0, y: 0 }
+        { progress: 0.0, city: 'palmas', name: 'Palmas (TO)', desc: 'Sede Principal. Estrutura presencial completa para atendimento tático de alta complexidade.', scale: 1, ox: 50, oy: 50 },
+        { progress: 0.15, city: 'porto-nacional', name: 'Porto Nacional (TO)', desc: 'Atendimento presencial dedicado, aproximando nossa expertise da sua região.', scale: 2.5, ox: 65.6, oy: 38 },
+        { progress: 0.35, city: 'goianorte', name: 'Goianorte (TO)', desc: 'Extensão estratégica de nossos serviços de excelência para o interior do estado.', scale: 2.5, ox: 64, oy: 33 },
+        { progress: 0.55, city: 'tocantinopolis,porto-franco', name: 'Tocantins & Maranhão', desc: 'Forte atuação na fronteira: Tocantinópolis (TO) e Porto Franco (MA).', scale: 2.2, ox: 65.5, oy: 26 },
+        { progress: 0.75, city: 'maceio,propria', name: 'Alagoas & Sergipe', desc: 'Presença consolidada no Nordeste garantindo agilidade e poder nos tribunais: Maceió (AL) e Propriá (SE).', scale: 2.2, ox: 95, oy: 37 },
+        { progress: 0.95, city: 'brasil', name: 'Nível Nacional', desc: 'Independente de onde você esteja, nosso Atendimento Digital entrega a mesma combatividade, segurança e transparência em todo o Brasil.', scale: 1, ox: 50, oy: 50 }
     ];
 
     const presencaSection = document.getElementById('presenca-regional');
-    const mapContainer = document.getElementById('map-container');
+    const mapWrapper = document.getElementById('map-wrapper');
     const cityNameEl = document.getElementById('active-city-name');
     const cityDescEl = document.getElementById('active-city-desc');
     const cityPoints = document.querySelectorAll('.city-point');
 
-    if (presencaSection && mapContainer) {
+    if (presencaSection && mapWrapper) {
         window.addEventListener('scroll', () => {
             const rect = presencaSection.getBoundingClientRect();
             const sectionHeight = rect.height - window.innerHeight; 
@@ -958,10 +958,11 @@
                 const easeSegment = segmentProgress < 0.5 ? 2 * segmentProgress * segmentProgress : -1 + (4 - 2 * segmentProgress) * segmentProgress;
                 
                 const currentScale = currentStop.scale + (nextStop.scale - currentStop.scale) * easeSegment;
-                const currentX = currentStop.x + (nextStop.x - currentStop.x) * easeSegment;
-                const currentY = currentStop.y + (nextStop.y - currentStop.y) * easeSegment;
+                const currentOx = currentStop.ox + (nextStop.ox - currentStop.ox) * easeSegment;
+                const currentOy = currentStop.oy + (nextStop.oy - currentStop.oy) * easeSegment;
 
-                mapContainer.style.transform = `scale(${currentScale}) translate(${currentX}px, ${currentY}px)`;
+                mapWrapper.style.transformOrigin = `${currentOx}% ${currentOy}%`;
+                mapWrapper.style.transform = `scale(${currentScale})`;
 
                 const activeStop = segmentProgress < 0.5 ? currentStop : nextStop;
                 if (cityNameEl.innerText !== activeStop.name) {
