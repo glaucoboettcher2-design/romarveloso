@@ -228,18 +228,22 @@
             <div class="beam beam-2"></div>
         </div>
 
-        <!-- Balança de Fundo (Scale SVG) centralizada na tela -->
-        <div class="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none opacity-[0.04] z-0 -translate-x-12 lg:-translate-x-24">
-            <svg class="w-[120vw] h-[120vw] md:w-[700px] md:h-[700px] text-gold" fill="none" stroke="currentColor" stroke-width="0.3" viewBox="0 0 100 100">
-                <!-- Central Pillar -->
-                <path class="svg-scale-path" d="M 50 10 V 90 M 35 90 H 65 M 45 10 H 55"></path>
-                <!-- Beam -->
-                <path class="svg-scale-path" d="M 15 30 H 85"></path>
-                <!-- Strings and Bowls (Left) -->
-                <path class="svg-scale-path" d="M 15 30 L 5 65 M 15 30 L 25 65 M 5 65 Q 15 80 25 65 Z"></path>
-                <!-- Strings and Bowls (Right) -->
-                <path class="svg-scale-path" d="M 85 30 L 75 65 M 85 30 L 95 65 M 75 65 Q 85 80 95 65 Z"></path>
-            </svg>
+        <!-- Balança de Fundo (Scale SVG) centralizada com o texto -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-0 flex items-center">
+            <div class="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="flex justify-center items-center opacity-[0.08]">
+                    <svg class="w-[100vw] h-[100vw] md:w-[700px] md:h-[700px] text-gold" fill="none" stroke="currentColor" stroke-width="0.4" viewBox="0 0 100 100">
+                        <!-- Central Pillar -->
+                        <path class="svg-scale-path" d="M 50 10 V 90 M 35 90 H 65 M 45 10 H 55"></path>
+                        <!-- Beam -->
+                        <path class="svg-scale-path" d="M 15 30 H 85"></path>
+                        <!-- Strings and Bowls (Left) -->
+                        <path class="svg-scale-path" d="M 15 30 L 5 65 M 15 30 L 25 65 M 5 65 Q 15 80 25 65 Z"></path>
+                        <!-- Strings and Bowls (Right) -->
+                        <path class="svg-scale-path" d="M 85 30 L 75 65 M 85 30 L 95 65 M 75 65 Q 85 80 95 65 Z"></path>
+                    </svg>
+                </div>
+            </div>
         </div>
 
 
@@ -288,14 +292,9 @@
                 
                 <!-- Card Flutuante (Dashboard / Design System) -->
                 <div class="absolute -left-4 md:left-4 lg:-left-12 bottom-12 w-[260px] glass-panel border border-gold/20 p-5 rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.8)] hover:-translate-y-2 transition-transform duration-500 z-30 backdrop-blur-xl">
-                    <div class="flex items-center gap-4 mb-5">
-                        <div class="w-10 h-10 shrink-0 rounded-full bg-bgMain border border-gold/40 flex items-center justify-center text-silver-light">
-                            <i data-lucide="user" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <p class="font-heading text-lg text-transparent bg-clip-text bg-gradient-to-r from-silver-dark via-silver-light to-white leading-none">Romar Veloso</p>
-                            <p class="text-[10px] text-gold uppercase tracking-widest mt-1.5 font-bold">Sócio Fundador</p>
-                        </div>
+                    <div class="text-center mb-5">
+                        <p class="font-heading text-lg text-transparent bg-clip-text bg-gradient-to-r from-silver-dark via-silver-light to-white leading-none">Romar Veloso</p>
+                        <p class="text-[10px] text-gold uppercase tracking-widest mt-1.5 font-bold">Sócio Fundador</p>
                     </div>
                     <button class="w-full py-2.5 bg-transparent hover:bg-white/5 border border-white/10 hover:border-gold/30 text-xs text-silver uppercase tracking-widest rounded-md transition-all">
                         Ver Perfil
