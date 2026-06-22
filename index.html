@@ -1052,8 +1052,8 @@
                     // Se a seção estiver visível
                     if (rect.top < window.innerHeight && rect.bottom > 0) {
                         const scrolled = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-                        // Movimento suave de cima para baixo
-                        ctaLogo.style.transform = `translateY(${(scrolled - 0.5) * 80}px)`;
+                        // Movimento suave e super evidente de cima para baixo (intervalo de 400px)
+                        ctaLogo.style.transform = `translateY(${(scrolled - 0.5) * 400}px)`;
                     }
                 }, { passive: true });
             }
