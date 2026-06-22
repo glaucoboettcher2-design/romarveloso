@@ -39,7 +39,10 @@
             100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
         }
 
-        .animate-on-scroll { animation-play-state: paused !important; }
+        .animate-on-scroll { 
+            opacity: 0;
+            animation-play-state: paused !important; 
+        }
         .animate-on-scroll.animate { animation-play-state: running !important; }
 
         .border-gradient {
@@ -160,6 +163,22 @@
                     fontFamily: {
                         heading: ['var(--font-heading)'],
                         body: ['var(--font-body)']
+                    },
+                    keyframes: {
+                        animationIn: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)', filter: 'blur(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)', filter: 'blur(0px)' }
+                        }
+                    },
+                    animation: {
+                        'in-100': 'animationIn 0.8s ease-out 0.1s both',
+                        'in-200': 'animationIn 0.8s ease-out 0.2s both',
+                        'in-300': 'animationIn 0.8s ease-out 0.3s both',
+                        'in-400': 'animationIn 0.8s ease-out 0.4s both',
+                        'in-500': 'animationIn 0.8s ease-out 0.5s both',
+                        'in-600': 'animationIn 0.8s ease-out 0.6s both',
+                        'in-700': 'animationIn 0.8s ease-out 0.7s both',
+                        'in-800': 'animationIn 0.8s ease-out 0.8s both',
                     }
                 }
             }
@@ -227,7 +246,7 @@
         <div class="relative z-10 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
             <!-- Texto (Esquerda) -->
-            <div class="animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both] space-y-8">
+            <div class="animate-on-scroll animate-in-200 space-y-8">
                 
                 <div class="flex flex-col">
                     <h1 class="font-heading text-[3.5rem] md:text-[5rem] lg:text-[6.5rem] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white uppercase">
@@ -255,7 +274,7 @@
             </div>
 
             <!-- Imagem Placeholder (Direita) -->
-            <div class="relative w-full animate-on-scroll [animation:animationIn_0.8s_ease-out_0.5s_both] flex items-center justify-center">
+            <div class="relative w-full animate-on-scroll animate-in-500 flex items-center justify-center">
                 <!-- Moldura elegante estilo Apple/Aura com a Imagem -->
                 <!-- Moldura elegante ajustada (w-fit) para abraçar a imagem sem sobras laterais -->
                 <div class="glass-panel border-gradient p-0 rounded-2xl shadow-2xl flex flex-col overflow-hidden relative z-10 w-fit max-w-[400px] mx-auto">
@@ -297,7 +316,7 @@
     <!-- SEÇÃO O PROBLEMA -->
     <section id="problema" class="max-w-7xl mx-auto px-6 py-20 relative">
         <!-- Título da Seção -->
-        <div class="mb-16 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.1s_both]">
+        <div class="mb-16 animate-on-scroll animate-in-100">
             <div class="flex justify-between items-center border-b border-white/20 pb-3 mb-8 w-full">
                 <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">O Problema</span>
                 <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Contexto</span>
@@ -308,7 +327,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
             
             <!-- Esquerda: Imagens Temáticas Alternantes -->
-            <div class="lg:col-span-5 relative h-full min-h-[400px] rounded-3xl overflow-hidden glass-panel border-gradient p-2 group animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+            <div class="lg:col-span-5 relative h-full min-h-[400px] rounded-3xl overflow-hidden glass-panel border-gradient p-2 group animate-on-scroll animate-in-200">
                 <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
                 
                 <!-- Slide 1 -->
@@ -343,7 +362,7 @@
             <div class="lg:col-span-7 flex flex-col justify-center gap-6">
                 
                 <!-- Card 1 -->
-                <div class="glass-panel p-8 rounded-2xl border-gradient relative group hover:-translate-y-1 transition-transform duration-500 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.3s_both]">
+                <div class="glass-panel p-8 rounded-2xl border-gradient relative group hover:-translate-y-1 transition-transform duration-500 animate-on-scroll animate-in-300">
                     <div class="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-500 rounded-2xl pointer-events-none"></div>
                     <div class="flex items-start gap-6">
                         <div class="w-12 h-12 shrink-0 rounded-full bg-[#111111] border border-gold/30 flex items-center justify-center text-gold shadow-[0_0_15px_rgba(212,175,55,0.15)] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-shadow">
@@ -357,7 +376,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="glass-panel p-8 rounded-2xl border-gradient relative group hover:-translate-y-1 transition-transform duration-500 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.4s_both]">
+                <div class="glass-panel p-8 rounded-2xl border-gradient relative group hover:-translate-y-1 transition-transform duration-500 animate-on-scroll animate-in-400">
                     <div class="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-500 rounded-2xl pointer-events-none"></div>
                     <div class="flex items-start gap-6">
                         <div class="w-12 h-12 shrink-0 rounded-full bg-[#111111] border border-gold/30 flex items-center justify-center text-gold shadow-[0_0_15px_rgba(212,175,55,0.15)] group-hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-shadow">
@@ -371,7 +390,7 @@
                 </div>
 
                 <!-- Card 3 (Comunicado Importante) -->
-                <div class="mt-8 relative flex items-stretch group hover:-translate-y-1 transition-transform duration-500 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.5s_both]">
+                <div class="mt-8 relative flex items-stretch group hover:-translate-y-1 transition-transform duration-500 animate-on-scroll animate-in-500">
                     <!-- Barra dourada lateral -->
                     <div class="w-2 md:w-3 bg-gradient-to-b from-gold-light via-gold to-gold-dark shrink-0 rounded-l-sm shadow-[0_0_15px_rgba(212,175,55,0.3)]"></div>
                     
@@ -415,7 +434,7 @@
                 
                 <!-- Coluna de Texto -->
                 <div class="space-y-8">
-                    <div class="animate-on-scroll [animation:animationIn_0.8s_ease-out_0.1s_both]">
+                    <div class="animate-on-scroll animate-in-100">
                         <div class="flex justify-between items-center border-b border-white/20 pb-3 mb-6 w-full">
                             <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Banca de Advogados</span>
                             <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Equipe</span>
@@ -423,13 +442,13 @@
                         <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-silver via-silver-light to-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Romar Veloso <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light">Advocacia</span></h2>
                     </div>
 
-                    <div class="space-y-6 text-silver leading-relaxed font-light text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+                    <div class="space-y-6 text-silver leading-relaxed font-light text-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-on-scroll animate-in-200">
                         <p>O Romar Veloso Advocacia atua desde 2010 na defesa dos direitos previdenciários e bancários dos seus clientes.</p>
                         <p>São <strong class="text-white font-medium">mais de 15 anos de atuação</strong> e mais de <strong class="text-gold font-medium">10 mil processos judiciais</strong> e requerimentos administrativos conduzidos, com experiência em demandas que exigem conhecimento técnico e acompanhamento próximo.</p>
                         <p>O trabalho é pautado pela ética, transparência e atendimento humanizado, com atenção individual a cada caso.</p>
                     </div>
 
-                    <div class="pt-6 border-t border-gold/20 flex flex-col sm:flex-row items-start sm:items-center gap-6 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.3s_both]">
+                    <div class="pt-6 border-t border-gold/20 flex flex-col sm:flex-row items-start sm:items-center gap-6 animate-on-scroll animate-in-300">
                         <div class="flex-1">
                             <p class="font-heading text-2xl text-transparent bg-clip-text bg-gradient-to-r from-silver-dark via-silver-light to-white mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Dr. Eudes Romar Veloso de Morais Santos</p>
                             <p class="text-sm text-silver-dark mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Graduado em Direito pela Universidade Federal do Tocantins (UFT) e especialista em Direito e Processo Previdenciário pela Escola Aberta de Direito (EADIR).</p>
@@ -439,7 +458,7 @@
                 </div>
 
                 <!-- Coluna de Imagem -->
-                <div class="relative group mt-10 lg:mt-0 flex justify-center lg:justify-end animate-on-scroll [animation:animationIn_0.8s_ease-out_0.4s_both]">
+                <div class="relative group mt-10 lg:mt-0 flex justify-center lg:justify-end animate-on-scroll animate-in-400">
                     <div class="absolute inset-0 bg-gold/10 blur-[60px] rounded-full -z-10 opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
                     <div class="relative w-full max-w-[500px]">
                         <div class="glass-panel border-gradient p-2 rounded-2xl shadow-2xl relative z-10 overflow-hidden transform group-hover:scale-[1.02] transition-transform duration-700 w-full">
@@ -455,19 +474,19 @@
 
                 <!-- GRID DE NÚMEROS DE AUTORIDADE -->
                 <div class="col-span-1 lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 relative z-10">
-                    <div class="bg-white/5 backdrop-blur-md border-gradient p-8 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-transform duration-500 hover:bg-white/10 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.5s_both]">
+                    <div class="bg-white/5 backdrop-blur-md border-gradient p-8 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-transform duration-500 hover:bg-white/10 animate-on-scroll animate-in-500">
                         <h4 class="font-heading text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">+<span class="count-up" data-target="15">0</span></h4>
                         <p class="text-xs uppercase tracking-widest text-silver font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Anos de<br>Atuação</p>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-md border-gradient p-8 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-transform duration-500 hover:bg-white/10 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.6s_both]">
+                    <div class="bg-white/5 backdrop-blur-md border-gradient p-8 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-transform duration-500 hover:bg-white/10 animate-on-scroll animate-in-600">
                         <h4 class="font-heading text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">+<span class="count-up" data-target="10" data-suffix=" mil">0</span></h4>
                         <p class="text-xs uppercase tracking-widest text-silver font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Processos<br>Judiciais</p>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-md border-gradient p-8 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-transform duration-500 hover:bg-white/10 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.7s_both]">
+                    <div class="bg-white/5 backdrop-blur-md border-gradient p-8 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-transform duration-500 hover:bg-white/10 animate-on-scroll animate-in-700">
                         <h4 class="font-heading text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">+<span class="count-up" data-target="5000">0</span></h4>
                         <p class="text-xs uppercase tracking-widest text-silver font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Ações<br>Previdenciárias</p>
                     </div>
-                    <div class="bg-white/5 backdrop-blur-md border-gradient p-8 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-transform duration-500 hover:bg-white/10 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.8s_both]">
+                    <div class="bg-white/5 backdrop-blur-md border-gradient p-8 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:-translate-y-2 transition-transform duration-500 hover:bg-white/10 animate-on-scroll animate-in-800">
                         <h4 class="font-heading text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-light mb-3 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">+<span class="count-up" data-target="3000">0</span></h4>
                         <p class="text-xs uppercase tracking-widest text-silver font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Ações contra<br>Bancos</p>
                     </div>
@@ -496,7 +515,7 @@
         </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.1s_both]">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4 animate-on-scroll animate-in-100">
                 <div class="flex justify-between items-center border-b border-white/20 pb-3 mb-6 w-full">
                     <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Especialidades</span>
                     <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Áreas de Atuação</span>
@@ -507,11 +526,11 @@
             <div class="space-y-32">
                 <!-- Direito Previdenciário: Imagem à esquerda, Texto à direita -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center group">
-                    <div class="relative overflow-hidden rounded-3xl border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.5)] group-hover:border-gold/30 transition-all duration-700 h-[500px] animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+                    <div class="relative overflow-hidden rounded-3xl border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.5)] group-hover:border-gold/30 transition-all duration-700 h-[500px] animate-on-scroll animate-in-200">
                         <img src="img_previdenciario.png" alt="Direito Previdenciário" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 grayscale-[20%] group-hover:grayscale-0">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-90 pointer-events-none"></div>
                     </div>
-                    <div class="space-y-6 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.3s_both]">
+                    <div class="space-y-6 animate-on-scroll animate-in-300">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#151515] to-[#0a0a0a] border border-gold/20 flex items-center justify-center text-gold mb-6 shadow-[0_0_15px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-shadow duration-500">
                             <i data-lucide="shield-check" class="w-7 h-7"></i>
                         </div>
@@ -572,7 +591,7 @@
 
                 <!-- Direito Bancário: Texto à esquerda, Imagem à direita (Invertido no desktop) -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center group">
-                    <div class="space-y-6 order-2 lg:order-1 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.4s_both]">
+                    <div class="space-y-6 order-2 lg:order-1 animate-on-scroll animate-in-400">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#151515] to-[#0a0a0a] border border-gold/20 flex items-center justify-center text-gold mb-6 shadow-[0_0_15px_rgba(212,175,55,0.1)] group-hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-shadow duration-500">
                             <i data-lucide="landmark" class="w-7 h-7"></i>
                         </div>
@@ -623,7 +642,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="relative overflow-hidden rounded-3xl border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.5)] group-hover:border-gold/30 transition-all duration-700 h-[500px] order-1 lg:order-2 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.5s_both]">
+                    <div class="relative overflow-hidden rounded-3xl border border-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.5)] group-hover:border-gold/30 transition-all duration-700 h-[500px] order-1 lg:order-2 animate-on-scroll animate-in-500">
                         <img src="img_bancario_novo.webp" alt="Direito Bancário" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 grayscale-[20%] group-hover:grayscale-0">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-90 pointer-events-none"></div>
                     </div>
@@ -872,7 +891,7 @@
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.1s_both]">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4 animate-on-scroll animate-in-100">
                 <div class="flex justify-between items-center border-b border-white/20 pb-3 mb-6 w-full">
                     <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Reconhecimento</span>
                     <span class="text-white/80 font-body text-xs tracking-[0.15em] uppercase">Depoimentos</span>
@@ -884,7 +903,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Card 1 -->
-                <div class="glass-panel p-10 rounded-[32px] border-gradient relative group hover:-translate-y-2 transition-transform duration-500 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+                <div class="glass-panel p-10 rounded-[32px] border-gradient relative group hover:-translate-y-2 transition-transform duration-500 animate-on-scroll animate-in-200">
                     <i data-lucide="quote" class="w-10 h-10 text-gold mb-6 opacity-50 group-hover:opacity-100 transition-opacity duration-300"></i>
                     <p class="text-silver font-light text-lg italic leading-relaxed mb-8">"A equipe demonstrou um nível de profissionalismo e estratégia jurídica que salvou o patrimônio da minha empresa. A transparência em cada etapa foi fundamental."</p>
                     <div class="flex items-center gap-4 border-t border-white/10 pt-6">
@@ -899,7 +918,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="glass-panel p-10 rounded-[32px] border-gradient relative group hover:-translate-y-2 transition-transform duration-500 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.3s_both]">
+                <div class="glass-panel p-10 rounded-[32px] border-gradient relative group hover:-translate-y-2 transition-transform duration-500 animate-on-scroll animate-in-300">
                     <i data-lucide="quote" class="w-10 h-10 text-gold mb-6 opacity-50 group-hover:opacity-100 transition-opacity duration-300"></i>
                     <p class="text-silver font-light text-lg italic leading-relaxed mb-8">"Quando precisei de uma defesa incisiva, encontrei neles o amparo técnico e a agressividade necessária para reverter a situação. Resultados impressionantes e atendimento impecável."</p>
                     <div class="flex items-center gap-4 border-t border-white/10 pt-6">
@@ -914,7 +933,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="glass-panel p-10 rounded-[32px] border-gradient relative group hover:-translate-y-2 transition-transform duration-500 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.4s_both]">
+                <div class="glass-panel p-10 rounded-[32px] border-gradient relative group hover:-translate-y-2 transition-transform duration-500 animate-on-scroll animate-in-400">
                     <i data-lucide="quote" class="w-10 h-10 text-gold mb-6 opacity-50 group-hover:opacity-100 transition-opacity duration-300"></i>
                     <p class="text-silver font-light text-lg italic leading-relaxed mb-8">"A advocacia deles é de longe a mais técnica da região. Conseguiram organizar a minha documentação de uma vida inteira e aprovaram meu pleito em tempo recorde."</p>
                     <div class="flex items-center gap-4 border-t border-white/10 pt-6">
@@ -948,17 +967,17 @@
         <div class="max-w-4xl mx-auto px-6 relative z-10 w-full py-20 flex flex-col items-center text-center">
             
             <!-- The Call to Action -->
-            <h2 class="font-heading text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-10 drop-shadow-sm flex flex-col items-center animate-on-scroll [animation:animationIn_0.8s_ease-out_0.1s_both]">
+            <h2 class="font-heading text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-10 drop-shadow-sm flex flex-col items-center animate-on-scroll animate-in-100">
                 <span class="text-transparent bg-clip-text bg-gradient-to-bl from-[#2a2a2a] via-[#050505] to-[#000000] inline-block pb-1">Um compromisso</span>
                 <span class="text-transparent bg-clip-text bg-gradient-to-bl from-[#2a2a2a] via-[#050505] to-[#000000] inline-block pb-1">permanente com os</span>
                 <span class="text-transparent bg-clip-text bg-gradient-to-bl from-[#2a2a2a] via-[#050505] to-[#000000] inline-block italic font-light pb-1">seus direitos.</span>
             </h2>
 
-            <p class="text-[#080808]/70 font-body text-xl md:text-2xl font-light mb-16 max-w-2xl leading-relaxed animate-on-scroll [animation:animationIn_0.8s_ease-out_0.2s_both]">
+            <p class="text-[#080808]/70 font-body text-xl md:text-2xl font-light mb-16 max-w-2xl leading-relaxed animate-on-scroll animate-in-200">
                 Chame no WhatsApp e entenda quais são as suas opções com clareza e precisão estratégica.
             </p>
 
-            <div class="flex flex-col items-center gap-6 animate-on-scroll [animation:animationIn_0.8s_ease-out_0.3s_both]">
+            <div class="flex flex-col items-center gap-6 animate-on-scroll animate-in-300">
                 <a href="https://wa.me/5500000000000" target="_blank" class="group relative inline-flex items-center justify-center px-12 py-6 bg-gradient-to-bl from-[#1a1a1a]/90 via-[#050505]/90 to-[#000000]/90 backdrop-blur-md border border-[#000000]/50 shadow-[inset_-1px_1px_1px_rgba(255,255,255,0.08),_0_20px_40px_rgba(8,8,8,0.3)] text-[#F5D76E] font-body tracking-[0.2em] text-sm uppercase font-bold overflow-hidden transition-all duration-700 hover:shadow-[inset_-1px_1px_2px_rgba(255,255,255,0.15),_0_20px_50px_rgba(8,8,8,0.5)] hover:-translate-y-1">
                     <!-- Background expand on hover -->
                     <div class="absolute inset-0 bg-gradient-to-bl from-[#2a2a2a] via-[#111111] to-[#000000] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.7,0,0.3,1)]"></div>
@@ -1249,3 +1268,4 @@
     </script>
 </body>
 </html>
+
